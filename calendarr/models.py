@@ -11,4 +11,4 @@ class Event(models.Model):
     event_participants=models.TextField(max_length=50)
     event_date=models.DateField()
     event_time=models.TimeField()
-    event_description=models.TextField(max_length=2000,default='Description' )
+    event_description=models.TextField(max_length=2000)

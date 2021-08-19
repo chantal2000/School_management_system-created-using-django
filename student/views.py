@@ -3,7 +3,6 @@ from django.shortcuts import render
 from .forms import StudentRegistrationForm
 from django.shortcuts import render
 from .models import Student
-
 # Create your views here.
 
 def homepage(request):
@@ -22,5 +21,3 @@ def register_student(request):
 def student_list(request):
     students=Student.objects.all()
     return render(request,"student_list.htm",{"students":students})
-
-

@@ -35,52 +35,10 @@ form {
     background-color: rgb(143, 114, 114);
     text-align: center;
 }
-
 body {
     background-repeat: no-repeat;
     background-position: top;
     background-color: white;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 100%;
-    width: 35rem;
-    background-color: rgb(143, 114, 114);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    text-align: center;
-}
-
-header .navbar {
-    width: 200%;
-}
-
-header .navbar ul {
-    list-style: none;
-    padding: 1rem 3rem;
-    margin-right: 20%;
-}
-
-header .navbar ul li a {
-    display: block;
-    padding: 1rem;
-    margin: 4rem 0;
-    color: black;
-    font-size: 2rem;
-    border-radius: 5rem;
-    width: 90%;
-    background-color: white;
-    text-decoration: none;
-}
-
-header .navbar ul li a:hover {
-    background: white;
 }
 
 .par {

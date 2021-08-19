@@ -11,13 +11,15 @@ class EventRegistrationForm(forms.ModelForm):
         'age':forms.NumberInput(attrs={'class':'form_control'}),
         'event_planner':forms.TextInput(attrs={'class':'form_control'}),
         'event_duration':forms.TextInput(attrs={'class':'form_control'}),
-        'event_approval':forms.NumberInput(attrs={'class':'form_control'}),
+        'event_approval':forms.TextInput(attrs={'class':'form_control'}),
         'event_participants':forms.Textarea(attrs={'class':'form_control1'}),
         'event_date':forms.DateInput(attrs={'class':'form_control'}),
         'event_time':forms.TimeInput(attrs={'class':'form_control'}),
-        'event_description':forms.Textarea(attrs={'class':'form_control1'}),
+        'event_description':forms.Textarea(attrs={'class':'form_control1','placeholder':'Event description'}),
         'event_id':forms.TextInput(attrs={'class':'form_control'}),
-  
         }
-
+        # labels={
+        #     'event_description' : " ",
+        # }
+       
         
