@@ -17,8 +17,7 @@
             <div class="form ">
                 <form method="POST ">
                     <div style="width: 120px;">
-                        {{form.as_p}}
-
+                        {% csrf_token %} {{form.as_p}}
                     </div>
 
                     <button type="submit" class="btn btn-danger" id="btn">Register</button>

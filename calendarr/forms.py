@@ -1,25 +1,17 @@
-from django import forms
-from django.db.models import fields
+from django.forms import ModelForm, DateInput
+from django.forms.widgets import Textarea
 from .models import Event
-class EventRegistrationForm(forms.ModelForm):
-    class Meta():
-        model=Event
-        fields=("__all__")
-        widgets={
-        'venue':forms.TextInput(attrs={'class':'form_control'}),
-        'event_name':forms.TextInput(attrs={'class':'form_control'}),
-        'age':forms.NumberInput(attrs={'class':'form_control'}),
-        'event_planner':forms.TextInput(attrs={'class':'form_control'}),
-        'event_duration':forms.TextInput(attrs={'class':'form_control'}),
-        'event_approval':forms.TextInput(attrs={'class':'form_control'}),
-        'event_participants':forms.Textarea(attrs={'class':'form_control1'}),
-        'event_date':forms.DateInput(attrs={'class':'form_control'}),
-        'event_time':forms.TimeInput(attrs={'class':'form_control'}),
-        'event_description':forms.Textarea(attrs={'class':'form_control1','placeholder':'Event description'}),
-        'event_id':forms.TextInput(attrs={'class':'form_control'}),
-        }
-        # labels={
-        #     'event_description' : " ",
-        # }
-       
-        
+
+class EventForm(ModelForm):
+  class Meta:
+    model = Event
+    widgets = {
+      'start_time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M', ),
+      'end_time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
+      'description':Textarea(attrs={'class':'form_control','id':'des'}),
+    }
+    fields = '__all__'
+  def __init__(self, *args, **kwargs):
+    super(EventForm, self).__init__(*args, **kwargs)
+    self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
+    self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)

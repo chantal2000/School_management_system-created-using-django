@@ -35,6 +35,7 @@ form {
     background-color: rgb(143, 114, 114);
     text-align: center;
 }
+
 body {
     background-repeat: no-repeat;
     background-position: top;
@@ -86,7 +87,18 @@ h1 {
     margin-bottom: 10px;
 }
 
-table,
+table {
+    border-collapse: collapse;
+    width: 100%;
+    align-items: center;
+}
+
+th,
 td {
-    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }

@@ -23,15 +23,14 @@ class Student(models.Model):
         ('L',"Luganda"),
         ('k',"kiswahili"),
     )
-
     gender=models.CharField(max_length=10,choices=CHOICES)
     phone_number=PhoneNumberField() 
     guardian_name=models.CharField(max_length=40)
     email_address=models.EmailField(max_length=30)
     gender=models.CharField(max_length=10,choices=CHOICES)
-    profile_image=models.ImageField()
+    profile_image=models.ImageField(upload_to='uploads')
     grade=models.CharField(max_length=2)
-    medical_report=models.FileField(upload_to='uploads',blank=True)
+    medical_report=models.FileField(upload_to='uploads/%Y/%m/%d')
     date_Of_enrollment=models.DateTimeField(default=datetime.now)
     course_name=models.CharField(max_length=30)
     laptop_number=models.CharField(max_length=7)

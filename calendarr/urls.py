@@ -1,5 +1,6 @@
-from django.urls import path
-from .views import register_event
+from django.conf.urls import url
+from . import views 
 urlpatterns = [
-    path('registerevent/',register_event,name="register_event"),
+    url('registerevent/',views.CalendarView.as_view(),name='calendar'),
+    url('eventform/',views.event,name='eventform'),
 ]

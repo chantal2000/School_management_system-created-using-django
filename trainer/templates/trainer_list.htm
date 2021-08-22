@@ -1,0 +1,39 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{%  static  'css/style1.css'  %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trainer list</title>
+</head>
+<h1>Trainers List</h1>
+<table>
+    <tr id="row">
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Country</th>
+        <th>Trainer Id</th>
+        <th>Profile Image</th>
+        <th>Phone number</th>
+        <th>Course name</th>
+    </tr>
+    <tr>
+        {% for trainer in trainers %}
+        <td>{{trainer.first_name}}</td>
+        <td>{{trainer.last_name}}</td>
+        <td>{{trainer.country}}</td>
+        <td>{{trainer.trainer_id}}</td>
+        <td><img src="{{ stdnt.images.url}}" width="120" /></th>
+            <td>{{trainer.phone_number}}</td>
+            <td>{{trainer.course_name}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+<body>
+</body>
+
+</html>
