@@ -2,38 +2,82 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{%  static  'css/style1.css'  %}">
+    <!-- <link rel="stylesheet" href="{%  static  'css/style1.css'  %}"> -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses list</title>
+    <title>Course details</title>
 </head>
-<h1>Courses list</h1>
-<table>
-    <tr id="row">
-
-        <th>Course Name</th>
-        <th>Course Code</th>
-        <th>Course Duration</th>
-        <th>Trainer Name</th>
-        <th>Time in Hours</th>
-        <th>Course Schedule</th>
-    </tr>
-    <tr>
-        {% for course in courses %}
-
-        <td>{{course.course_name}}</td>
-        <td>{{course.course_code}}</td>
-        <td>{{course.course_duration}}</td>
-        <td>{{course.trainer_name}}</td>
-        <td>{{course.time_in_hours}}</td>
-        <td>{{course.course_schedule}}</td>
-
-    </tr>
-    {% endfor %}
-</table>
 
 <body>
+    <h1>COURSE LIST</h1>
+    <table class="student">
+        <tr>
+            <th>Edit course profile</th>
+            <th>Profile</th>
+            <th>Course name</th>
+            <!-- <th>Course Id</th> -->
+            <th>Course image</th>
+            <th>Course Duration</th>
+            <th>Trainer's name</th>
+            <th>Time in hours</th>
+        </tr>
+        <tr>
+            {% for course in courses %}
+            <td> <a href="{% url 'edit_course' id=course.id %}">Edit profile</a></td>
+            <td> <a href="{% url 'course_profile' id=course.id %}">Profile</a></td>
+            <td>{{course.course_name}}</td>
+            <!-- <td>{{course.course_id}}</td> -->
+
+            <td><img src="{{course.course_schedule.url}}" alt="img" width="250" height="150"></td>
+
+            <td>{{course.course_duration}}</td>
+            {% if student.profile %} {% endif %}
+            <td>{{course.trainer_name}}</td>
+            <td>{{course.time_in_hours}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        body {
+            background-color: burlywood;
+        }
+        
+        table {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            table-layout: auto;
+        }
+        
+        table,
+        tr,
+        th,
+        td {
+            padding: 5px;
+            color: black;
+            border: 2px solid purple;
+            border-collapse: collapse;
+            font-size: 15px;
+            font-style: serif;
+            background-color: white;
+            text-align: center;
+            /* margin-top: 3px; */
+        }
+        
+        h1 {
+            text-align: center;
+            color: purple;
+        }
+        
+        th {
+            color: white;
+            border: 2px solid white;
+            background-color: purple;
+        }
+    </style>
 </body>
+
 
 </html>

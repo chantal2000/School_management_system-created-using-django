@@ -2,38 +2,92 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{%  static  'css/style1.css'  %}">
+    <!-- <link rel="stylesheet" href="{%  static  'css/style1.css'  %}"> -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>trainer list</title>
+    <title>Student details</title>
 </head>
-<h1>Trainers List</h1>
-<table>
-    <tr id="row">
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Country</th>
-        <th>Trainer Id</th>
-        <th>Profile Image</th>
-        <th>Phone number</th>
-        <th>Course name</th>
-    </tr>
-    <tr>
-        {% for trainer in trainers %}
-        <td>{{trainer.first_name}}</td>
-        <td>{{trainer.last_name}}</td>
-        <td>{{trainer.country}}</td>
-        <td>{{trainer.trainer_id}}</td>
-        <td><img src="{{ stdnt.images.url}}" width="120" /></th>
-            <td>{{trainer.phone_number}}</td>
-            <td>{{trainer.course_name}}</td>
-
-    </tr>
-    {% endfor %}
-</table>
 
 <body>
+    <h1>TRAINERS LIST</h1>
+    <table class="student">
+        <tr>
+            <th>Edit trainer profile</th>
+            <th>Profile</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Profile image</th>
+            <th>Age</th>
+            <th>County </th>
+            <th>Profile</th>
+            <th>Date of birth</th>
+            <th>National ID</th>
+            <th>Language</th>
+            <th>Laptop Number</th>
+            <th>Grade</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            {% for trainer in trainers %}
+            <td> <a href="{% url 'edit_trainer' id=trainer.id %}">Edit profile</a></td>
+            <td> <a href="{% url 'trainer_profile' id=trainer.id %}">Profile</a></td>
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td><img src="{{trainer.profile_image.url}}" alt="img" width="150" height="150"></td>
+            <td>{{trainer.age}}</td>
+            <td>{{trainer.county}}</td>
+            {% if trainer.profile %}
+            <td><img src="{{trainer.profile_image.url}}" height="50" width="50" /></td>
+            {% endif %}
+            <td>{{trainer.date_of_birth}}</td>
+            <td>{{student.gurdians_name}}</td>
+            <td>{{trainer.language}}</td>
+            <td>{{trainer.gender}}</td>
+            <td>{{trainer.medical_report}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        body {
+            background-color: burlywood;
+        }
+        
+        table {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            table-layout: auto;
+        }
+        
+        table,
+        tr,
+        th,
+        td {
+            padding: 5px;
+            color: black;
+            border: 2px solid purple;
+            border-collapse: collapse;
+            font-size: 15px;
+            font-style: serif;
+            background-color: white;
+            text-align: center;
+            /* margin-top: 3px; */
+        }
+        
+        h1 {
+            text-align: center;
+            color: purple;
+        }
+        
+        th {
+            color: white;
+            border: 2px solid white;
+            background-color: purple;
+        }
+    </style>
 </body>
+
 
 </html>

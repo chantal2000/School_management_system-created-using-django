@@ -28,7 +28,7 @@ class Student(models.Model):
     guardian_name=models.CharField(max_length=40)
     email_address=models.EmailField(max_length=30)
     gender=models.CharField(max_length=10,choices=CHOICES)
-    profile_image=models.ImageField(upload_to='uploads')
+    profile_image=models.ImageField(upload_to='upload/')
     grade=models.CharField(max_length=2)
     medical_report=models.FileField(upload_to='uploads/%Y/%m/%d')
     date_Of_enrollment=models.DateTimeField(default=datetime.now)
@@ -36,6 +36,13 @@ class Student(models.Model):
     laptop_number=models.CharField(max_length=7)
     languages=models.CharField(max_length=30,choices=LANGUAGES)
     laptop_serial_number=models.CharField(max_length=20,blank=True,null=True)
+
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+    
+        
+
+
     
 
 

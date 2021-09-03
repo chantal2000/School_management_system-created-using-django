@@ -27,6 +27,9 @@ class Trainer(models.Model):
     profile_image=models.ImageField()
     course_name=models.CharField(max_length=30)
     languages=models.CharField(max_length=30,choices=LANGUAGES)
+
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
     
 
 

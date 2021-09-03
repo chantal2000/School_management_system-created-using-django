@@ -8,7 +8,6 @@ from django.views import generic
 from django.utils.safestring import mark_safe
 from .models import *
 from .utils import Calendar
-
 class CalendarView(generic.ListView):
     model = Event
     template_name = 'event.htm'
@@ -36,3 +35,16 @@ def event(request, event_id=None):
         form.save()
         return redirect('events:calendar')
     return render(request, 'calendarform.htm', {'form': form})
+def event_profile(request,id):
+    event=Event.objects.get(id=id)
+    return render(request,"event_profile.htm",{"event":event})
+def edit_event(request,id):
+        event=Event.objects.get(id=id)
+        if request.method=="POST":
+            form=EventForm(request.POST,instance=event)
+            if form.is_valid():
+                form.save()
+                return redirect("event_profile",id=event.id)
+            else:
+                form=EventForm(instance=event)
+                return render(request,"edit_event.htm",{"form":form})
