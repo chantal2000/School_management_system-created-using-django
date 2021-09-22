@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for school_system project.
 
@@ -9,21 +11,17 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
 import os
 from pathlib import Path
 
 
 from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2mkxz7y8kry+6dd*y=7nk*i(d(dao1wewml32^g&t-4bhsrw=*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
