@@ -1,0 +1,190 @@
+<!DOCTYPE html> {% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{%  static  'css/style1.css'  %}">
+</head>
+
+<body id="bg" style="background-color: white;">
+    <h2>Edit Event</h2>
+    <header>
+        <img src="{% static 'images/codehive.png' %}" alt="">
+
+        <nav class="navbar">
+            <ul>
+                <li> <a href="{% url 'home_events' %}">Home</a> </li>
+                <li>
+                    <a href="../register"></a>
+                </li>
+                <li>
+                    <a href="../about"></a>
+                </li>
+                <li>
+                    <a href="../login"></a>
+                </li>
+                <li>
+                    <a href="../signup"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <footer>
+        <img src="{% static 'images/codehive.png' %}" alt="">
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="../home">Login</a>
+                </li>
+                <li>
+                    <a href="../register"></a>
+                </li>
+                <li>
+                    <a href="../about"></a>
+                </li>
+                <li>
+                    <a href="../login"></a>
+                </li>
+                <li>
+                    <a href="../signup"></a>
+                </li>
+            </ul>
+        </nav>
+    </footer> -->
+
+    <div class="cen">
+
+        <div class="col-md-10 col-md-offset-1 ">
+            <div class="form">
+
+                <!-- <h1> REGISTER FORM</h1> -->
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- <h1>STUDENT REGISTER FORM</h1> -->
+                    <div style="width: 120px;">
+                        {{form.as_p}}
+                    </div>
+                    <button type="submit" class="btn btn-danger" id="btn">Register</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    <style>
+        input {
+            width: 100%;
+            outline: none;
+            border: 2px solid;
+            font-size: 12px;
+            padding: 8px 8px;
+        }
+        
+        header {
+            background-color: purple;
+            color: purple;
+        }
+        
+        input {
+            width: 460%;
+            padding: 7px;
+        }
+        
+        form {
+            background-color: white;
+            margin-right: 20%;
+            margin-left: 23%;
+            border: 3px solid purple;
+            padding: 5px;
+            width: 55%;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+        
+        label {
+            color: purple;
+        }
+        
+        ol {
+            margin-left: 90%;
+            background-color: burlywood;
+        }
+        
+        footer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            height: 100%;
+            width: 25rem;
+            background-color: purple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            text-align: center;
+            margin-left: 30%;
+        }
+        
+        footer .navbar {
+            width: 200%;
+        }
+        
+        footer .navbar ul {
+            list-style: none;
+            padding: 0.4rem 2rem;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        
+        footer .navbar ul li a {
+            display: block;
+            padding-left: 2rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            margin: 3rem 0.9rem;
+            color: black;
+            font-size: 2rem;
+            border-radius: 5rem;
+            width: 90%;
+            background-color: white;
+            text-decoration: none;
+        }
+        
+        footer .navbar ul li a:hover {
+            background: white;
+        }
+        
+        #btn {
+            margin-left: 40%;
+            color: white;
+            background-color: purple;
+        }
+        
+        img {
+            margin-left: 3%;
+            margin-top: 0;
+            width: 50%;
+        }
+        
+        h1 {
+            margin-left: 0%;
+            color: purple;
+            text-decoration: underline;
+            margin-bottom: 30px;
+            background-color: white;
+            width: 100%;
+            border: 3px solid burlywood;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html> {% load static %}
+<html>
+
+<head>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #img {
+            border: 3px solid white;
+            width: 50%;
+            margin-left: 0px;
+            margin-right: 40px;
+        }
+        
+        form {
+            border: 3px solid #f1f1f1;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: purple;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: purple;
+            color: white;
+        }
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+        
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        
+        .container {
+            padding: 16px;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+        
+        h2 {
+            margin-left: 45%;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 100%;
+            width: 15rem;
+            background-color: purple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            text-align: center;
+        }
+        
+        header .navbar {
+            width: 200%;
+        }
+        
+        header .navbar ul {
+            list-style: none;
+            padding: 0.4rem 2rem;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        
+        header .navbar ul li a {
+            display: block;
+            padding-top: 0.1rem;
+            margin: 3rem 0.9rem;
+            color: black;
+            font-size: 1.5rem;
+            border-radius: 1rem;
+            width: 60%;
+            background-color: white;
+            text-decoration: none;
+        }
+        
+        header .navbar ul li a:hover {
+            background: white;
+        }
+        
+        #a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="{% static 'images/codehive.png' %}" alt="" id="img">
+
+        <nav class="navbar">
+            <ul>
+                <li> <a href="../home">Go back</a> </li>
+                <li>
+                    <a href="../register"></a>
+                </li>
+                <li>
+                    <a href="../about"></a>
+                </li>
+                <li>
+                    <a href="../login"></a>
+                </li>
+                <li>
+                    <a href="../signup"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <i class='fas fa-chevron-circle-right' style='font-size:48px;color:red'></i>
+
+    <h2>Login Form</h2>
+    <form action="/action_page.php" method="post">
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <button type="submit">Login</button>
+            <script>
+                alert("Welcome back To AkiraChix management system")
+            </script>
+            <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            Don't have account?
+            <button type="button" class="cancelbtn"><a href="{% url 'register_student' %}"id="a">Register</a></button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+
+</body>
+
+</html>
+</li>
+</ul>
+</nav>
+</header>
+<i class='fas fa-chevron-circle-right' style='font-size:48px;color:red'></i>
+
+
+
+</body>
+
+</html>

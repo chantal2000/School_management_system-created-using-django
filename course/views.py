@@ -4,8 +4,8 @@ from .models import Course
 
 # Create your views here.
 
-def homepage(request):
-    return render(request,"all.htm")
+def home_course(request):
+    return render(request,"all_co.htm")
 def register_course(request):
     if request.method=="POST":
         form=CourseRegistrationForm(request.POST)

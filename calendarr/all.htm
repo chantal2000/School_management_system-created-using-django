@@ -1,0 +1,102 @@
+<!DOCTYPE html> {% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header>
+    <img src="{% static 'images/codehive.png' %}" id="sm" alt="">
+    <h1>AKiraChix management system</h1>
+</header>
+
+<body>
+
+    <nav>
+
+        <div id="nav-right">
+            <!-- <a href="">About</a> -->
+        </div>
+    </nav>
+    <div id="body">
+
+        <h2>Are you a student?</h2>
+        <img src="{% static 'images/student.jpeg' %}" id="img" alt="">
+        <button id="tr">
+        <a href="{%url 'register_student'%}">Events</a></button><button>Profile</a></button><button><a href="{%url 'student_list'%}">Students list</a></button><button id="tr"><a href="{%url 'homepage'%}">Home</a></button>
+
+    </div>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        #img {
+            margin-top: 0;
+            width: 85%;
+            height: 300px;
+        }
+        
+        #sm {
+            height: 50px;
+        }
+        
+        #body {
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 2px;
+        }
+        
+        header {
+            background-color: rgb(214, 141, 6);
+        }
+        
+        h1 {
+            margin-top: 0px;
+            margin-left: 40px;
+            text-align: center;
+            color: white;
+            padding-bottom: 20px;
+        }
+        
+        button {
+            margin: 10px;
+            background-color: white;
+            border: 3px solid orange;
+            padding: 2px;
+            width: 40%;
+            font-size: 20px;
+        }
+        
+        button:hover {
+            background-color: orange;
+        }
+        
+        #tr {
+            background-color: orange;
+            color: white;
+            font-size: 20px;
+        }
+        
+        h2 {
+            font-size: 30px;
+            margin-top: 0;
+            margin-left: 30%;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+        
+        #nav-right {
+            text-align: right;
+            margin-left: 90%;
+        }
+    </style>
+
+</body>
+
+</html>

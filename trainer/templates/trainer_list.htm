@@ -3,88 +3,88 @@
 
 <head>
     <!-- <link rel="stylesheet" href="{%  static  'css/style1.css'  %}"> -->
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student details</title>
+    <title>Trainer details</title>
 </head>
 
 <body>
+    <button> <a href="{% url 'home_trainer' %}" id="back">Go back</a></button>
     <h1>TRAINERS LIST</h1>
     <table class="student">
         <tr>
             <th>Edit trainer profile</th>
             <th>Profile</th>
+            <th>Profile image</th>
+
             <th>First name</th>
             <th>Last name</th>
-            <th>Profile image</th>
-            <th>Age</th>
-            <th>County </th>
-            <th>Profile</th>
+            <th>Country </th>
             <th>Date of birth</th>
             <th>National ID</th>
-            <th>Language</th>
-            <th>Laptop Number</th>
-            <th>Grade</th>
             <th>Gender</th>
         </tr>
         <tr>
             {% for trainer in trainers %}
             <td> <a href="{% url 'edit_trainer' id=trainer.id %}">Edit profile</a></td>
             <td> <a href="{% url 'trainer_profile' id=trainer.id %}">Profile</a></td>
-            <td>{{trainer.first_name}}</td>
-            <td>{{trainer.last_name}}</td>
-            <td><img src="{{trainer.profile_image.url}}" alt="img" width="150" height="150"></td>
-            <td>{{trainer.age}}</td>
-            <td>{{trainer.county}}</td>
-            {% if trainer.profile %}
+            {% if trainer.profile_image %}
             <td><img src="{{trainer.profile_image.url}}" height="50" width="50" /></td>
             {% endif %}
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.country}}</td>
             <td>{{trainer.date_of_birth}}</td>
-            <td>{{student.gurdians_name}}</td>
-            <td>{{trainer.language}}</td>
+            <td>{{trainer.national_id}}</td>
             <td>{{trainer.gender}}</td>
-            <td>{{trainer.medical_report}}</td>
         </tr>
         {% endfor %}
     </table>
     <style>
-        body {
-            background-color: burlywood;
+        #back {
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        button {
+            background-color: purple;
+            color: white;
         }
         
         table {
-            width: 100%;
-            margin: auto;
-            text-align: center;
-            table-layout: auto;
-        }
-        
-        table,
-        tr,
-        th,
-        td {
-            padding: 5px;
-            color: black;
-            border: 2px solid purple;
+            font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
-            font-size: 15px;
-            font-style: serif;
-            background-color: white;
-            text-align: center;
-            /* margin-top: 3px; */
+            width: 100%;
         }
         
-        h1 {
-            text-align: center;
-            color: purple;
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e4d8d8;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
         }
         
         th {
-            color: white;
-            border: 2px solid white;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            text-align: left;
             background-color: purple;
+            color: white;
+        }
+        
+        h1 {
+            margin-left: 40%;
+            margin-top: 0;
         }
     </style>
 </body>

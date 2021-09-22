@@ -3,8 +3,10 @@ from .forms import TrainerRegistrationForm
 from .models import Trainer
 # Create your views here.
 
-def homepage(request):
-    return render(request,"all.htm")
+def home_trainer(request):
+    return render(request,"all_tra.htm")
+def login_trainer(request):
+    return render(request,"login.htm")
 
 def register_trainer(request):
     if request.method=="POST":

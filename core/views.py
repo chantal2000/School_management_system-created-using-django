@@ -1,17 +1,12 @@
 from django.shortcuts import render
-
-# Create your views here.
-
-from student.models import *
-from trainer.models import *
-from course.models import *
-from calendarr.models import *
-
+from student.models import Student
+from trainer.models import Trainer
+from course.models import Course
+from calendarr.models import Event
 def home(request):
-    students=Student.objects.count()
-    trainers=Trainer.objects.count()
-    courses=Course.objects.count()
-    events=Event.objects.count()
-    data={"students":students,"trainers":trainers,"courses":courses,"events":events}
-    return render(request,"home.htm",data)
-
+    students=Student.objects.count(),
+    trainers=Trainer.objects.count(),
+    courses=Course.objects.count(),
+    events=Event.objects.count(),
+    data={'student':students,'trainer':trainers,'course':courses,'event':events}
+    return render(request,'home_page.htm',data)

@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <h1>COURSE LIST</h1>
+    <button> <a href="{% url 'home_course' %}" id="back">Go back</a></button>
+    <h1>COURSES LIST</h1>
     <table class="student">
         <tr>
             <th>Edit course profile</th>
@@ -29,7 +30,6 @@
             <td> <a href="{% url 'course_profile' id=course.id %}">Profile</a></td>
             <td>{{course.course_name}}</td>
             <!-- <td>{{course.course_id}}</td> -->
-
             <td><img src="{{course.course_schedule.url}}" alt="img" width="250" height="150"></td>
 
             <td>{{course.course_duration}}</td>
@@ -40,41 +40,49 @@
         {% endfor %}
     </table>
     <style>
-        body {
-            background-color: burlywood;
+        #back {
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        button {
+            background-color: purple;
+            color: white;
         }
         
         table {
-            width: 100%;
-            margin: auto;
-            text-align: center;
-            table-layout: auto;
-        }
-        
-        table,
-        tr,
-        th,
-        td {
-            padding: 5px;
-            color: black;
-            border: 2px solid purple;
+            font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
-            font-size: 15px;
-            font-style: serif;
-            background-color: white;
-            text-align: center;
-            /* margin-top: 3px; */
+            width: 100%;
         }
         
-        h1 {
-            text-align: center;
-            color: purple;
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e4d8d8;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
         }
         
         th {
-            color: white;
-            border: 2px solid white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
             background-color: purple;
+            color: white;
+        }
+        
+        h1 {
+            margin-left: 40%;
+            margin-top: 0;
         }
     </style>
 </body>

@@ -26,7 +26,6 @@ class StudentRegistrationForm(forms.ModelForm):
         'laptop_number':forms.NumberInput(attrs={'class':'form_control'}),
         'languages':forms.Select(attrs={'class':'form_control'}),
         'laptop_serial_number':forms.TextInput(attrs={'class':'form_control'}),
-
         }
         
 
