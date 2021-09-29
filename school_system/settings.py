@@ -12,24 +12,21 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 import django_heroku
-
+import dj_database_url
 from pathlib import Path
 
 
 from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+BASE_DIR = Path(__file__).resolve().parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
 SECRET_KEY = 'django-insecure-2mkxz7y8kry+6dd*y=7nk*i(d(dao1wewml32^g&t-4bhsrw=*'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
 ALLOWED_HOSTS = []
-STATIC_URL = '/static/'
+STATIC_URL = '/1static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -97,18 +94,28 @@ WSGI_APPLICATION = 'school_system.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# https://docs.djangoproject.com/en/3.2/ref/settings/#data
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'chantaldb',
+        'USER': 'chantal',
+        'PASSWORD': 'namuhoranye2000',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
