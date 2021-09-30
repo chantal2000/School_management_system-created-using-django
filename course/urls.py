@@ -1,4 +1,3 @@
-from school_system.trainer.views import delete_trainer
 from django.urls import path
 from . import views 
 urlpatterns = [
