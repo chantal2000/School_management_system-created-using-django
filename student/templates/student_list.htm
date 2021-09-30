@@ -35,6 +35,8 @@
             {% for student in students %}
             <td> <a href="{% url 'edit_student' id=student.id %}" id="big">Edit profile</a></td>
             <td> <a href="{% url 'student_profile' id=student.id %}" id="big">Profile</a></td>
+            <td> <a href="{% url 'delete_student' id=student.id %}" id="big">Delete</a></td>
+
             {% if student.profile_image %}
             <td><img src="{{student.profile_image.url}}" height="50" width="50" /></td>
             {% endif %}

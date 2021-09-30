@@ -41,6 +41,10 @@ def edit_student(request,id):
         return render (request,"edit_student.htm",{"form":form})
 def login(request):
     return render(request,"login.htm")
+def delete_student(request,id):
+    students=Student.objects.get(id=id)
+    students.delete()
+    return redirect("student_list")
     
   
 
