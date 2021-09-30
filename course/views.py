@@ -32,3 +32,7 @@ def edit_course(request,id):
     else:
         form=CourseRegistrationForm(instance=course)
         return render (request,"edit_course.htm",{"form":form})
+def delete_course(request,id):
+    courses=Course.objects.get(id=id)
+    courses.delete()
+    return redirect("course_list")

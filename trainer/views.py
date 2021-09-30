@@ -34,3 +34,7 @@ def edit_trainer(request,id):
     else:
         form=TrainerRegistrationForm(instance=student)
         return render (request,"edit_student.htm",{"form":form})
+def delete_trainer(request,id):
+    trainers=Trainer.objects.get(id=id)
+    trainers.delete()
+    return redirect("trainer_list")
