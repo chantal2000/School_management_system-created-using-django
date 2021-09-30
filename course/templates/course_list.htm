@@ -28,6 +28,7 @@
             {% for course in courses %}
             <td> <a href="{% url 'edit_course' id=course.id %}">Edit profile</a></td>
             <td> <a href="{% url 'course_profile' id=course.id %}">Profile</a></td>
+            <td> <a href="{% url 'delete_course' id=course.id %}" id="big">Delete</a></td>
 
             <td>{{course.course_name}}</td>
             <!-- <td>{{course.course_id}}</td> -->
