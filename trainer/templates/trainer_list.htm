@@ -29,6 +29,7 @@
             {% for trainer in trainers %}
             <td> <a href="{% url 'edit_trainer' id=trainer.id %}">Edit profile</a></td>
             <td> <a href="{% url 'trainer_profile' id=trainer.id %}">Profile</a></td>
+            <td> <a href="{% url 'delete_trainer' id=trainer.id %}" id="big">Delete</a></td>
             {% if trainer.profile_image %}
             <td><img src="{{trainer.profile_image.url}}" height="50" width="50" /></td>
             {% endif %}
