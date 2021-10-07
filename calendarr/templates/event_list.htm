@@ -26,12 +26,8 @@
         <tr>
             {% for event in events %}
             <td> <a href="{% url 'edit_event' id=event.id %}" id="big">Edit profile</a></td>
-            <!-- <td> <a href="{% url 'event_profile' id=event.id %}" id="big">Profile</a></td> -->
+            <!-- <td> <a href="{% url 'student_profile' id=student.id %}" id="big">Profile</a></td> -->
             <td> <a href="{% url 'delete_event' id=event.id %}" id="big">Delete</a></td>
-
-            <!-- {% if student.profile_image %} -->
-            <!-- <td><img src="{{student.profile_image.url}}" height="50" width="50" /></td>
-            {% endif %} -->
             <td>{{event.event_id}}</td>
             <td>{{event.title}}</td>
             <td>{{event.description}}</td>
