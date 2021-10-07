@@ -82,7 +82,7 @@ def event_form(request):
     else:
         form= EventForm()
     return render(request,"event_form.htm",{"form":form})
-def events_list(request):
+def event_list(request):
     events=Event.objects.all()
     return render(request,"event_list.htm",{"events":events})
 # def edit_event(request,id):
