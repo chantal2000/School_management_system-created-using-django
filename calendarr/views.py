@@ -85,6 +85,8 @@ def event_form(request):
 def event_list(request):
     events=Event.objects.all()
     return render(request,"event_list.htm",{"events":events})
+
+    
 # def edit_event(request,id):
 #     event=Event.objects.get(id=id)
 #     if request.method=="POST":
@@ -95,7 +97,7 @@ def event_list(request):
 #     else:
 #         form=EventForm(instance=event)
 #         return render (request,"edit_event.htm",{"form":form})
-def delete_course(request,id):
+def delete_event(request,id):
     events=Event.objects.get(id=id)
     events.delete()
-    return redirect("event_list")
+    return redirect(reverse('events_list'))
