@@ -25,7 +25,7 @@
         <a href="{%url 'eventform'%}" class="white">Register</a></button>
         <button>  {% for event in events %}<a href="{% url 'edit_event' id=event.id %}">Edit Event</a>  {% endfor %}</button>
         <button><a href="{%url 'calendar'%}">Calendar</a></button>
-        <a href="{%url 'events_list '%}" class="white">Events list</a><button id="tr"><a href="{%url 'homepage'%}"class="white">Home</a></button>
+        <a href="{%url 'homepage'%}" class="white">Events list</a><button id="tr"><a href="{%url 'homepage'%}"class="white">Home</a></button>
     </div>
     <style>
         a {
