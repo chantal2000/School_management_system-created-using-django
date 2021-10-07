@@ -1,0 +1,92 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <!-- <link rel="stylesheet" href="{%  static  'css/style1.css'  %}"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events details</title>
+</head>
+
+<body>
+    <button> <a href="{% url 'home_events' %}" id="back">Go back</a></button>
+    <h1>EVENTS LIST</h1>
+    <table class="student">
+        <tr>
+            <th>Edit student profile</th>
+            <!-- <th>Profile</th> -->
+            <th>Delete</th>
+            <th> Event_id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start time</th>
+            <th>End time</th>
+        </tr>
+        <tr>
+            {% for event in events %}
+            <td> <a href="{% url 'edit_event' id=event.id %}" id="big">Edit profile</a></td>
+            <!-- <td> <a href="{% url 'event_profile' id=event.id %}" id="big">Profile</a></td> -->
+            <td> <a href="{% url 'delete_event' id=event.id %}" id="big">Delete</a></td>
+
+            <!-- {% if student.profile_image %} -->
+            <!-- <td><img src="{{student.profile_image.url}}" height="50" width="50" /></td>
+            {% endif %} -->
+            <td>{{event.event_id}}</td>
+            <td>{{event.title}}</td>
+            <td>{{event.description}}</td>
+            <td>{{event.start_time}}</td>
+            <td>{{event.end_time}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        #back {
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        button {
+            background-color: purple;
+            color: white;
+        }
+        
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e4d8d8;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+        
+        th {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            text-align: left;
+            background-color: purple;
+            color: white;
+        }
+        
+        h1 {
+            margin-left: 40%;
+            margin-top: 0;
+        }
+    </style>
+</body>
+
+
+</html>
