@@ -82,3 +82,20 @@ def event_form(request):
     else:
         form= EventForm()
     return render(request,"event_form.htm",{"form":form})
+def events_list(request):
+    events=Event.objects.all()
+    return render(request,"event_list.htm",{"events":events})
+# def edit_event(request,id):
+#     event=Event.objects.get(id=id)
+#     if request.method=="POST":
+#         form=EventForm(request.POST,instance=event)
+#         if form.is_valid():
+#             form.save()
+#         return redirect("event_profile",id=event.id)
+#     else:
+#         form=EventForm(instance=event)
+#         return render (request,"edit_event.htm",{"form":form})
+def delete_course(request,id):
+    events=Event.objects.get(id=id)
+    events.delete()
+    return redirect("event_list")

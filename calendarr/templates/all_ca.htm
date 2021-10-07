@@ -24,7 +24,8 @@
         <img src="{% static 'images/events.jpg' %}" id="img" alt=""> <button id="tr">
         <a href="{%url 'eventform'%}" class="white">Register</a></button>
         <button>  {% for event in events %}<a href="{% url 'edit_event' id=event.id %}">Edit Event</a>  {% endfor %}</button>
-        <button><a href="{%url 'calendar'%}">Calendar</a></button><button id="tr"><a href="{%url 'homepage'%}"class="white">Home</a></button>
+        <button><a href="{%url 'calendar'%}">Calendar</a></button>
+        <a href="{%url 'events_list '%}" class="white">Events list</a><button id="tr"><a href="{%url 'homepage'%}"class="white">Home</a></button>
     </div>
     <style>
         a {
