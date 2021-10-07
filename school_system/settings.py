@@ -101,16 +101,16 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'chantaldb',
-        'USER': 'chantal',
-        'PASSWORD': 'namuhoranye2000',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'chantaldb',
+#         'USER': 'chantal',
+#         'PASSWORD': 'namuhoranye2000',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 
