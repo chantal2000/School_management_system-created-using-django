@@ -15,7 +15,7 @@
 
         <nav class="navbar">
             <ul>
-                <li> <a href="{% url 'home_student' %}">Home</a> </li>
+                <li> <a href="{% url 'home_student' %}" id="hom">Home</a> </li>
                 <li>
                     <a href="../register"></a>
                 </li>
@@ -88,51 +88,6 @@
             background-color: burlywood;
         }
         
-        footer {
-            position: fixed;
-            top: 0;
-            right: 0;
-            z-index: 1000;
-            height: 100%;
-            width: 25rem;
-            background-color: purple;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-flow: column;
-            text-align: center;
-            margin-left: 30%;
-        }
-        
-        footer .navbar {
-            width: 200%;
-        }
-        
-        footer .navbar ul {
-            list-style: none;
-            padding: 0.4rem 2rem;
-            margin-left: 20%;
-            margin-right: 20%;
-        }
-        
-        footer .navbar ul li a {
-            display: block;
-            padding-left: 2rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            margin: 3rem 0.9rem;
-            color: black;
-            font-size: 2rem;
-            border-radius: 5rem;
-            width: 90%;
-            background-color: white;
-            text-decoration: none;
-        }
-        
-        footer .navbar ul li a:hover {
-            background: white;
-        }
-        
         #btn {
             margin-left: 40%;
             color: white;
@@ -161,7 +116,6 @@
         
         header .navbar ul li a {
             display: block;
-            padding-top: 0.1rem;
             margin: 3rem 0.9rem;
             color: black;
             font-size: 1.5rem;
@@ -170,6 +124,10 @@
             background-color: white;
             text-decoration: none;
             margin-left: 40px;
+        }
+        
+        #hom {
+            font-size: 20px;
         }
     </style>
 </body>
