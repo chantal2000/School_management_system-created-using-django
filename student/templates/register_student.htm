@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 <!DOCTYPE html> {% load static %}
 <html>
 
@@ -9,6 +10,7 @@
 </head>
 
 <body id="bg" style="background-color: white;">
+    {% block content %}
     <header>
         <img src="{% static 'images/codehive.png' %}" alt="">
 
@@ -49,6 +51,8 @@
         </form>
     </div>
     </div>
+    {% endblock content %}
+
     <style>
         input {
             width: 100%;

@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 <!DOCTYPE html> {% load static %}
 
 <html lang="en">
@@ -9,31 +10,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<header>
+<!-- <header>
     <img src="{% static 'images/codehive.png' %}" id="sm" alt="">
-</header>
+</header> -->
 
 <body>
-    <nav>
+    {% block content %}
+    <!-- <nav>
         <h2> AkiraChix Management System</h2>
         <div class="nav-right">
             <a href="" class="a" id="hm">Home</a>
-            <a href="" id="ab" class="a">About</a>
-            <a href="https://akirachix.com/" class="a">AkiraChix</a>
-        </div>
-        </div>
-    </nav>
+            <a href="" id="ab" class="a">About</a> -->
+    <!-- <a href="https://akirachix.com/" class="a">AkiraChix</a>
+    </div>
+    </div>
+    </nav> -->
+    <a href="/accounts/login">Login</a>
+    <a href="/accounts/register">Register</a>
     <div id="body">
         <p>AKiraChix Management System(AMS) is an information management system to manage all students'data,trainer's data<span id="dots">...</span><span id="more">,planning currriculumns ,recording students'attendance and all<br> students,trainers-related needs withing AkiraChix.AkiraChix is a non-profit organisation<br> which offers young women hands-on technical training in market-relevant technology, <br>entrepreneurship and life skills, to positively impact their lives and communities and<br> close the gender gap in the technology field.</span></p>
         <button onclick="myFunction()" id="myBtn">Read more</button>
         <img src="{% static 'images/chix.jpg' %}" id="chix" alt="">
 
-        <button id="tr"><a href="{%url 'home_student' %}"class="white">Students</a></button>
-        <button><a href="{%url 'home_trainer' %}"id="wt">Trainers</a></button><button><a href="{%url 'home_course' %}">Courses</a></button><button id="tr"><a href="{%url 'home_events' %}"class="white">Events</a></button>
+        <button id="tr"><a href="{%url 'student:home_student' %}"class="white">Students</a></button>
+        <button><a href="{%url 'trainer:home_trainer' %}"id="wt">Trainers</a></button><button><a href="{%url 'home_course' %}">Courses</a></button><button id="tr"><a href="{%url 'home_events' %}"class="white">Events</a></button>
         <!-- <video width='500' height='180' controls muted>
         <source src="{% static 'videos/Akirachix.mp4' type='video/mp4' %}"> 
         </video> -->
     </div>
+    {% endblock content %}
     <style>
         a {
             text-decoration: none;
@@ -184,13 +189,6 @@
             font-style: unset;
         }
         
-        .nav-right {
-            margin-left: 80%;
-            padding-left: 30px;
-            font-size: 17px;
-            margin-bottom: 0;
-        }
-        
         #ab {
             background-color: white;
             color: purple;
@@ -202,6 +200,13 @@
         nav {
             background-color: purple;
             color: white;
+        }
+        
+        .nav-right {
+            margin-left: 80%;
+            padding-left: 30px;
+            font-size: 17px;
+            margin-bottom: 0;
         }
         
         .a {

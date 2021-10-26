@@ -10,7 +10,10 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Student(models.Model):
     first_name=models.CharField(max_length=10)
     last_name=models.CharField(max_length=12)
+    profile_image=models.ImageField()
+    email_address=models.EmailField(max_length=30)
     country =CountryField()
+
     age=models.PositiveSmallIntegerField()
     date_of_birth = models.DateTimeField(blank=True,null=True)
     roll_number=models.CharField(max_length=5)
@@ -29,9 +32,7 @@ class Student(models.Model):
     gender=models.CharField(max_length=10,choices=CHOICES)
     phone_number=PhoneNumberField() 
     guardian_name=models.CharField(max_length=40)
-    email_address=models.EmailField(max_length=30)
     gender=models.CharField(max_length=10,choices=CHOICES)
-    profile_image=models.ImageField()
     grade=models.CharField(max_length=2)
     medical_report=models.FileField(upload_to='uploads/%Y/%m/%d')
     date_Of_enrollment=models.DateTimeField(blank=True,null=True)

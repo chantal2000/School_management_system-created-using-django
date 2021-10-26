@@ -26,5 +26,5 @@ urlpatterns =[
     path("course/",include("course.urls")),
     path("calendar/",include("calendarr.urls")),
     path("api/",include("api.urls")),
-
+    path("accounts/",include("registration.backends.default.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
